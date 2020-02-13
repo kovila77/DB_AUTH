@@ -89,9 +89,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Password.Handler\PasswordCoder.csproj">
+    <ProjectReference Include="..\Password.Handler\PasswordHandler.csproj">
       <Project>{8536CC5B-8068-4F3C-AC7C-4D782C728E91}</Project>
-      <Name>PasswordCoder</Name>
+      <Name>PasswordHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

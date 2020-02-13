@@ -6,17 +6,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PasswordCoder
+namespace PasswordHandler
 {
-    public class PasswordCoder
+    public static class PasswordHandler
     {
 
-        public PasswordCoder()
-        {
-
-        }
-
-        public  byte[] CreateSalt()
+        public static byte[] CreateSalt()
         {
             var buffer = new byte[16];
             var rng = new RNGCryptoServiceProvider();
@@ -24,7 +19,7 @@ namespace PasswordCoder
             return buffer;
         }
 
-        public  byte[] HashPassword(string password, byte[] salt)
+        public static byte[] HashPassword(string password, byte[] salt)
         {
             var argon2 = new Argon2id(Encoding.UTF8.GetBytes(password))
             {
@@ -36,10 +31,23 @@ namespace PasswordCoder
             return argon2.GetBytes(32);
         }
 
-        public  bool VerifyHash(string password, byte[] salt, byte[] hash)
+        public static bool VerifyHash(string password, byte[] salt, byte[] hash)
         {
             var newHash = HashPassword(password, salt);
             return hash.SequenceEqual(newHash);
+        }
+
+        /// <summary>
+        /// use Zxcvbn to check password. You can add bad words
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="badWords"></param>
+        /// <returns></returns>
+        public static bool IsStrongPassword(string password, List<string> badWords = null)
+        {
+            var result = Zxcvbn.Zxcvbn.MatchPassword(password, badWords);
+            if (result.Score > 2) return true;
+            return false;
         }
     }
 }

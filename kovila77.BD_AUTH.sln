@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication", "Authorization\Authentication.csproj", "{858AB400-BF51-4671-B807-009AFC78C021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordCoder", "Password.Handler\PasswordCoder.csproj", "{8536CC5B-8068-4F3C-AC7C-4D782C728E91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHandler", "Password.Handler\PasswordHandler.csproj", "{8536CC5B-8068-4F3C-AC7C-4D782C728E91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUsersHandler", "DBUsers.Handler\DBUsersHandler.csproj", "{8ECEB982-8A70-4EAA-BA47-9F5709C41245}"
 EndProject

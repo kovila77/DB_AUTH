@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Registration
 {
-    static class Program
+    static class Registration
     {
         /// <summary>
         /// Главная точка входа для приложения.

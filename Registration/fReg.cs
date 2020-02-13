@@ -13,6 +13,7 @@ using Npgsql;
 using System.Security.Cryptography;
 using Konscious.Security.Cryptography;
 using DBUsersHandler;
+using PasswordHandler;
 
 namespace Registration
 {
@@ -29,17 +30,22 @@ namespace Registration
 
         private void InitializeDBUserClass()
         {
-            _dbConrol.tryConnection();
-            //TODO
-            MessageBox.Show("hello! Do пинок до бд");
+            try
+            {
+                _dbConrol.TryConnection();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Trouble with DB\n{e.Message}");
+                throw e;
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void tbLogin_TextChanged(object sender, EventArgs e)
         {
             if (!loginRegex.IsMatch(tbLogin.Text))
             {
-                epLogin.SetError(tbLogin,
-                    "Некорректный логин");
+                epLogin.SetError(tbLogin, "Некорректный логин");
                 btRegister.Enabled = false;
                 return;
             }
@@ -55,11 +61,25 @@ namespace Registration
 
         private void btRegister_Click(object sender, EventArgs e)
         {
+            btRegister.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
-            MessageBox.Show("Now will be calc hash. OK to bigin");
+            MessageBox.Show("Now will be calc hash. OK to begin");
             _dbConrol.AddNewUser(tbLogin.Text, tbPassword.Text);
             MessageBox.Show("hash calc complite");
             Cursor.Current = Cursors.Default;
+            tbLogin_TextChanged(this, null);
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (!PasswordHandler.PasswordHandler.IsStrongPassword(tbPassword.Text, new List<string> { tbLogin.Text }))
+            {
+                epPassword.SetError(tbPassword, "Слабый пороль логин");
+                btRegister.Enabled = false;
+                return;
+            }
+            epPassword.SetError(tbPassword, "");
+            btRegister.Enabled = true;
         }
     }
 }

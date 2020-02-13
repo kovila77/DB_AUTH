@@ -92,7 +92,7 @@
     <Compile Include="fReg.Designer.cs">
       <DependentUpon>fReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Registration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fReg.resx">
       <DependentUpon>fReg.cs</DependentUpon>
@@ -125,6 +125,10 @@
     <ProjectReference Include="..\DBUsers.Handler\DBUsersHandler.csproj">
       <Project>{8eceb982-8a70-4eaa-ba47-9f5709c41245}</Project>
       <Name>DBUsersHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Password.Handler\PasswordHandler.csproj">
+      <Project>{8536CC5B-8068-4F3C-AC7C-4D782C728E91}</Project>
+      <Name>PasswordHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
