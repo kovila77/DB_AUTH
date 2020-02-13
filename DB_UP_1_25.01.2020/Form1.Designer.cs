@@ -1,6 +1,6 @@
 ﻿namespace DB_UP_1_25._01._2020
 {
-    partial class Form1
+    partial class fReg
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -38,9 +38,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lPassword = new System.Windows.Forms.Label();
+            this.epLogin = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epMain)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // pnLogin
@@ -51,7 +55,7 @@
             this.pnLogin.Location = new System.Drawing.Point(0, 0);
             this.pnLogin.Name = "pnLogin";
             this.pnLogin.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.pnLogin.Size = new System.Drawing.Size(528, 71);
+            this.pnLogin.Size = new System.Drawing.Size(535, 48);
             this.pnLogin.TabIndex = 0;
             // 
             // tbLogin
@@ -77,9 +81,9 @@
             // 
             this.btRegister.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btRegister.Enabled = false;
-            this.btRegister.Location = new System.Drawing.Point(0, 235);
+            this.btRegister.Location = new System.Drawing.Point(0, 153);
             this.btRegister.Name = "btRegister";
-            this.btRegister.Size = new System.Drawing.Size(528, 23);
+            this.btRegister.Size = new System.Drawing.Size(535, 23);
             this.btRegister.TabIndex = 1;
             this.btRegister.Text = "Зарегистрироваться";
             this.btRegister.UseVisualStyleBackColor = true;
@@ -98,10 +102,10 @@
             this.panel1.Controls.Add(this.tbPassword);
             this.panel1.Controls.Add(this.lPassword);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 71);
+            this.panel1.Location = new System.Drawing.Point(0, 48);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.panel1.Size = new System.Drawing.Size(528, 71);
+            this.panel1.Size = new System.Drawing.Size(535, 50);
             this.panel1.TabIndex = 2;
             // 
             // tbPassword
@@ -122,21 +126,31 @@
             this.lPassword.TabIndex = 1;
             this.lPassword.Text = "Пароль:";
             // 
-            // Form1
+            // epLogin
+            // 
+            this.epLogin.ContainerControl = this;
+            // 
+            // epPassword
+            // 
+            this.epPassword.ContainerControl = this;
+            // 
+            // fReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 258);
+            this.ClientSize = new System.Drawing.Size(535, 176);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btRegister);
             this.Controls.Add(this.pnLogin);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "fReg";
+            this.Text = "Registration";
             this.pnLogin.ResumeLayout(false);
             this.pnLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epMain)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -152,6 +166,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label lPassword;
+        private System.Windows.Forms.ErrorProvider epLogin;
+        private System.Windows.Forms.ErrorProvider epPassword;
     }
 }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DB_UP_1_25._01._2020
+namespace Authorization
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace DB_UP_1_25._01._2020
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fReg());
+            Application.Run(new Form1());
         }
     }
 }
