@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DB_UP_1_25._01._2020" GeneratedClassName="Database">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Registration" GeneratedClassName="Database">
   <Profiles />
   <Settings>
     <Setting Name="Host" Type="System.String" Scope="User">

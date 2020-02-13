@@ -1,4 +1,4 @@
-﻿namespace DB_UP_1_25._01._2020
+﻿namespace Registration
 {
     partial class fReg
     {
