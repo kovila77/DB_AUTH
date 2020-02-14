@@ -1,10 +1,7 @@
 ﻿using Konscious.Security.Cryptography;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PasswordHandler
 {
@@ -44,7 +41,7 @@ namespace PasswordHandler
         /// <returns></returns>
         public static bool IsStrongPassword(string password, List<string> badWords = null)
         {
-            var result = Zxcvbn.Zxcvbn.MatchPassword(password, badWords);
+            var result = Zxcvbn.Zxcvbn.MatchPassword(password.Trim(), badWords);
             if (result.Score > 2) return true;
             return false;
         }

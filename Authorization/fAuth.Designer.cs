@@ -28,25 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnLogin = new System.Windows.Forms.Panel();
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.lLogin = new System.Windows.Forms.Label();
             this.btAuthentication = new System.Windows.Forms.Button();
-            this.oldImage = new System.Windows.Forms.OpenFileDialog();
-            this.epMain = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnPassword = new System.Windows.Forms.Panel();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lPassword = new System.Windows.Forms.Label();
-            this.epLogin = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pnLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epMain)).BeginInit();
             this.pnPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epLogin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnLogin
@@ -91,14 +81,6 @@
             this.btAuthentication.UseVisualStyleBackColor = true;
             this.btAuthentication.Click += new System.EventHandler(this.btAuthentication_Click);
             // 
-            // oldImage
-            // 
-            this.oldImage.FileName = "openFileDialog1";
-            // 
-            // epMain
-            // 
-            this.epMain.ContainerControl = this;
-            // 
             // pnPassword
             // 
             this.pnPassword.Controls.Add(this.tbPassword);
@@ -130,14 +112,6 @@
             this.lPassword.TabIndex = 1;
             this.lPassword.Text = "Пароль:";
             // 
-            // epLogin
-            // 
-            this.epLogin.ContainerControl = this;
-            // 
-            // epPassword
-            // 
-            this.epPassword.ContainerControl = this;
-            // 
             // fAuth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,12 +125,8 @@
             this.Text = "Authentication";
             this.pnLogin.ResumeLayout(false);
             this.pnLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epMain)).EndInit();
             this.pnPassword.ResumeLayout(false);
             this.pnPassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epLogin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,14 +137,9 @@
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.Label lLogin;
         private System.Windows.Forms.Button btAuthentication;
-        private System.Windows.Forms.OpenFileDialog oldImage;
-        private System.Windows.Forms.ErrorProvider epMain;
         private System.Windows.Forms.Panel pnPassword;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label lPassword;
-        private System.Windows.Forms.ErrorProvider epLogin;
-        private System.Windows.Forms.ErrorProvider epPassword;
-        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 

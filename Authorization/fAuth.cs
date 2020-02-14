@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions; // для регулярок
-using System.IO;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Security.Cryptography;
-using DBUsersHandler;
-using PasswordHandler;
 
 namespace Authentication
 {
@@ -50,11 +39,11 @@ namespace Authentication
             btAuthentication.Enabled = false;
             if (_dbConrol.IsExistsInDBUser(tbLogin.Text, tbPassword.Text))
             {
-                MessageBox.Show("success");
+                MessageBox.Show("Вы успешно аутентифицированны");
             }
             else
             {
-                MessageBox.Show("unsuccess");
+                MessageBox.Show("Вы не аутентифицированны!!!");
             }
             RefreshBtAuth();
         }

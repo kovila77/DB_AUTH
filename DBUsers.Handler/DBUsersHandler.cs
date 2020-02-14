@@ -1,11 +1,6 @@
 ﻿using Npgsql;
-using PasswordHandler;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace DBUsersHandler
 {
@@ -140,6 +135,8 @@ namespace DBUsersHandler
 
         public bool IsExistsInDBUser(string uLogin, string uPassword)
         {
+            uPassword = uPassword.Trim();
+
             uLogin = RemoveExtraSpaces(uLogin);
 
             if (!_loginRegex.IsMatch(uLogin)) return false;
@@ -177,6 +174,10 @@ namespace DBUsersHandler
         /// <param name="newPassword"></param>
         public void AddNewUser(string newLogin, string newPassword)
         {
+            newPassword = newPassword.Trim();
+
+            newLogin = RemoveExtraSpaces(newLogin);
+
             if (!_loginRegex.IsMatch(RemoveExtraSpaces(newLogin)))
             {
                 throw new ArgumentException("Bad login");
