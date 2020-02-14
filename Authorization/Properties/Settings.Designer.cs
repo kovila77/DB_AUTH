@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Authorization.Properties
+namespace Authentication.Properties
 {
 
 

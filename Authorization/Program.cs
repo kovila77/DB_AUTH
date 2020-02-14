@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Authentication;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Authorization
+namespace Authentication
 {
     static class Program
     {
@@ -16,7 +17,7 @@ namespace Authorization
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new fAuth());
         }
     }
 }

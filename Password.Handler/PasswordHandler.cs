@@ -10,7 +10,6 @@ namespace PasswordHandler
 {
     public static class PasswordHandler
     {
-
         public static byte[] CreateSalt()
         {
             var buffer = new byte[16];
@@ -19,6 +18,12 @@ namespace PasswordHandler
             return buffer;
         }
 
+        /// <summary>
+        /// give password hash, using salt.
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="salt"></param>
+        /// <returns></returns>
         public static byte[] HashPassword(string password, byte[] salt)
         {
             var argon2 = new Argon2id(Encoding.UTF8.GetBytes(password))
@@ -31,14 +36,8 @@ namespace PasswordHandler
             return argon2.GetBytes(32);
         }
 
-        public static bool VerifyHash(string password, byte[] salt, byte[] hash)
-        {
-            var newHash = HashPassword(password, salt);
-            return hash.SequenceEqual(newHash);
-        }
-
         /// <summary>
-        /// use Zxcvbn to check password. You can add bad words
+        /// use Zxcvbn to check quality of password. You can add bad words
         /// </summary>
         /// <param name="password"></param>
         /// <param name="badWords"></param>

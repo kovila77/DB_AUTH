@@ -46,17 +46,22 @@ namespace Registration
             if (!loginRegex.IsMatch(tbLogin.Text))
             {
                 epLogin.SetError(tbLogin, "Некорректный логин");
-                btRegister.Enabled = false;
-                return;
+                //btRegister.Enabled = false;
             }
-            if (_dbConrol.IsExistsInDBLogin(tbLogin.Text))
+            else
             {
-                epLogin.SetError(tbLogin, "Логин уже занят");
-                btRegister.Enabled = false;
-                return;
+                if (_dbConrol.IsExistsInDBLogin(tbLogin.Text))
+                {
+                    epLogin.SetError(tbLogin, "Логин уже занят");
+                    //btRegister.Enabled = false;
+                }
+                else
+                {
+                    epLogin.SetError(tbLogin, "");
+                }
             }
-            epLogin.SetError(tbLogin, "");
-            btRegister.Enabled = true;
+            //btRegister.Enabled = true;
+            RefreshBtReg();
         }
 
         private void btRegister_Click(object sender, EventArgs e)
@@ -67,7 +72,8 @@ namespace Registration
             _dbConrol.AddNewUser(tbLogin.Text, tbPassword.Text);
             MessageBox.Show("hash calc complite");
             Cursor.Current = Cursors.Default;
-            tbLogin_TextChanged(this, null);
+            epLogin.SetError(tbLogin, "Логин уже занят");
+            RefreshBtReg();
         }
 
         private void tbPassword_TextChanged(object sender, EventArgs e)
@@ -75,11 +81,26 @@ namespace Registration
             if (!PasswordHandler.PasswordHandler.IsStrongPassword(tbPassword.Text, new List<string> { tbLogin.Text }))
             {
                 epPassword.SetError(tbPassword, "Слабый пороль логин");
-                btRegister.Enabled = false;
-                return;
+                //btRegister.Enabled = false;
             }
-            epPassword.SetError(tbPassword, "");
-            btRegister.Enabled = true;
+            else
+            {
+                epPassword.SetError(tbPassword, "");
+            }
+            RefreshBtReg();
+            //btRegister.Enabled = true;
+        }
+
+        private void RefreshBtReg()
+        {
+            if (epPassword.GetError(tbPassword) == "" && epLogin.GetError(tbLogin) == "")
+            {
+                btRegister.Enabled = true;
+            }
+            else
+            {
+                btRegister.Enabled = false;
+            }
         }
     }
 }

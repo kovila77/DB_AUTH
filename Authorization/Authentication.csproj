@@ -46,14 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="fAuth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="fAuth.Designer.cs">
+      <DependentUpon>fAuth.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fAuth.resx">
+      <DependentUpon>fAuth.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +78,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBUsers.Handler\DBUsersHandler.csproj">
+      <Project>{8ECEB982-8A70-4EAA-BA47-9F5709C41245}</Project>
+      <Name>DBUsersHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Password.Handler\PasswordHandler.csproj">
+      <Project>{8536CC5B-8068-4F3C-AC7C-4D782C728E91}</Project>
+      <Name>PasswordHandler</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
