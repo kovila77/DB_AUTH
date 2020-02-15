@@ -33,7 +33,7 @@ namespace Registration
         {
             if (!loginRegex.IsMatch(tbLogin.Text))
             {
-                epMain.SetError(tbLogin, "Некорректный логин");
+                epMain.SetError(tbLogin, "Некорректный логин: В логине могут быть использованы символы, изображённые на классической русско-английской раскладке клавиатуре. Длина логина от 6 до 50 символов");
             }
             else
             {

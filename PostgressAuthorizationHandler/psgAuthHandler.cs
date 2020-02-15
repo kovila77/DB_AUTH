@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PostgressAuthorizationHandler
 {
-    public class Class1
+    public class psgAuthHandler
     {
+        delegate bool MyComp(int x, int y);
+
+
     }
 }
