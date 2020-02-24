@@ -14,6 +14,8 @@ namespace Registration
         {
             InitializeComponent();
             InitializeDBUserClass();
+            epMain.SetError(tbLogin, "Некорректный логин: В логине могут быть использованы символы, изображённые на классической русско-английской раскладке клавиатуре. Длина логина от 6 до 50 символов");
+            epMain.SetError(tbPassword, "Слабый пороль");
         }
 
         private void InitializeDBUserClass()
@@ -31,7 +33,7 @@ namespace Registration
 
         private void tbLogin_TextChanged(object sender, EventArgs e)
         {
-            if (!loginRegex.IsMatch(tbLogin.Text))
+            if (!loginRegex.IsMatch(tbLogin.Text.Trim()))
             {
                 epMain.SetError(tbLogin, "Некорректный логин: В логине могут быть использованы символы, изображённые на классической русско-английской раскладке клавиатуре. Длина логина от 6 до 50 символов");
             }
